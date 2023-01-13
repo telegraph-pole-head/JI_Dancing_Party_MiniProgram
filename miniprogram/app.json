@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/email/email",
+    "pages/invitation/invitation",
+    "pages/invite/invite",
+    "pages/mine/mine",
+    "pages/edit/edit",
+    "pages/home/home",
+    "pages/search/search",
+    "pages/view/view",
+    "pages/check/check",
+    "pages/respond/respond",
+    "pages/partner/partner"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "2022 Enigma 幻境舞会",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home.png"
+      },
+      {
+        "pagePath": "pages/invite/invite",
+        "text": "邀请",
+        "iconPath": "icons/invite.png",
+        "selectedIconPath": "icons/invite.png"
+      },
+      {
+        "pagePath": "pages/email/email",
+        "text": "信箱",
+        "iconPath": "icons/mail.png",
+        "selectedIconPath": "icons/mail.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人",
+        "iconPath": "icons/mine.png",
+        "selectedIconPath": "icons/mine.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

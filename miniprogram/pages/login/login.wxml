@@ -1,0 +1,29 @@
+<!-- 登陆页面 -->
+<view wx:if="{{haslog==false}}">
+<view class='btn'>
+  <image src="{{imageUrl}}" mode='widthFix'></image>
+</view>
+<text decode="{{true}}">&nbsp;</text>
+<form bindsubmit="btnSub">
+  <view>
+    <input name="userid" class="input1" placeholder="请输入姓名："></input>
+  </view>
+  <text decode="{{true}}">&nbsp;</text>
+  <view>
+    <input name="password" class="input1" placeholder="请输入密码:（默认为报名时填的手机号）"></input>
+  </view>
+  <view class="container">
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" type="default" bindtap="getUserProfile"> 微信用户授权 </button>
+      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    </block>
+    <block wx:if="{{hasUserInfo}}">
+      <text decode="{{true}}">&nbsp;</text>
+    </block>
+  </view>
+</view>
+  <button type="primary" plain form-type="submit"  bindgetuserinfo="handleGetUserInfo">登录</button>
+</form>
+</view>
+<view wx:if="{{haslog==true}}" class="tips">识别到用户，页面跳转中</view>

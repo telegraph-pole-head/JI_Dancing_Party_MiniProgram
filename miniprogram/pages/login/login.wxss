@@ -1,0 +1,29 @@
+/* pages/login/login.wxss */
+button{
+  margin-top:20rpx;
+  width:100%;
+}
+.view-contain-ti {
+  height: 30px;
+  margin: 20px;
+  border-radius: 15rpx;
+}
+.input1 {
+  border-bottom: 1px solid gray;
+  margin:  auto 10px;
+  height: 30px;
+}
+.btn{
+  width: 100%;
+  background: none;
+}
+.btn image{
+  width: 100%;
+}
+.tips{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  color:gray;
+  height:800rpx;
+}

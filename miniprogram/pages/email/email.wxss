@@ -1,0 +1,70 @@
+/* pages/invite/invite.wxss */
+/* pages/home/home.wxss */
+.user_icon{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+.test{
+  display:fixed;
+  justify-content: center;
+}
+.search_input {
+  height: 50rpx;
+  padding: 10rpx;
+  background-color:dodgerblue;
+}
+.search_input navigator {
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: snow;
+  border-radius:15rpx;
+  color:#666;
+}
+.first_tab .dancers {
+  display: flex;
+}
+.first_tab .dancers .dancerImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first_tab .dancers .dancerImage image {
+  width: 70%;
+}
+.first_tab .dancers .dancerInfo {
+  flex: 2;
+}
+.first_tab .dancers .dancerInfo .dancerName {
+  font-size: 27rpx;
+}
+.first_tab .dancers .dancerInfo .dancerGender {
+  font-size: 27rpx;
+}
+.first_tab .dancers .dancerInfo .dancerSchool {
+  font-size: 27rpx;
+}
+.first_tab .dancers .dancerInfo .dancerMsg {
+  font-size: 27rpx;
+}
+.first_tab .dancers .dancerInfo .dancerMsg2 {
+  font-size: 27rpx;
+  color:gray;
+}
+.tips{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  color:gray;
+  height:800rpx;
+}
+.time{
+  display:flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-bottom: 5rpx solid #ccc;
+  font-size: 18rpx;
+}

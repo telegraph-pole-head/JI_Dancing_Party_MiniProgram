@@ -1,0 +1,89 @@
+/* pages/edit/edit.wxss */
+.all{
+  display:flex;
+  flex-direction:column;
+}
+.top{
+  display:flex;
+}
+ .topshowimage{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topshowdetail{
+  flex:3;
+}
+.user_icon{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info_nickname{
+  font-size: 32rpx;
+}
+.user_info_phone{
+  font-size: 32rpx;
+}
+.userinformation{
+  display:flex;
+  flex-direction: row;
+}
+.form{
+  border-top: 1px solid gray;
+  margin:20rpx;
+  display:flex;
+  flex-direction:column;
+}
+.item{
+  position: relative;
+  left:30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content1{
+  position: relative;
+  left:150rpx;
+  display: flex;
+}
+.content2{
+  position: relative;
+  left:123rpx;
+  display: flex;
+}
+.textmyword{
+  position: relative;
+  left:30rpx;
+}
+.textbox{
+  border: 5rpx solid dodgerblue;
+  border-radius: 15rpx;
+  margin: 15rpx;
+  padding:8rpx;
+  width:665rpx;
+  height:500rpx;
+  font-size: 27rpx;
+}
+.tips{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  color:gray;
+  height:800rpx;
+}
+.graylength{
+  display:flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color:gray;
+  font-size: 18rpx;
+}
+.redlength{
+  display:flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color:red;
+  font-size: 18rpx;
+}
