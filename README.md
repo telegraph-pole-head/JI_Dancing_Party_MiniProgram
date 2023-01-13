@@ -1,4 +1,4 @@
-# Readme File for 2021 Enigma Project
+# README File for 2021 Enigma Project
 
 ## General Info
 
@@ -10,13 +10,7 @@
 - 项目介绍
 - 致谢
 
----
-
-<br>
-
 ## 项目介绍
-
----
 
 大致介绍一下，我写的所有代码都在 mycodes 文件夹中，每一个小文件夹中都会有 4 个小文件
 
@@ -27,8 +21,6 @@
 - 具体代码不在此赘述。
 
 ## 致谢
-
----
 
 - 感谢 2021 文艺部的每一位朋友的鼓励支持！
 - 感谢 kingking 提供的灵感!
