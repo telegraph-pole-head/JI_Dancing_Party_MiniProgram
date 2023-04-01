@@ -1,11 +1,10 @@
 <!-- 邀请函的页面 -->
+<image src="{{imageUrl}}" mode='widthFix'class="image"></image>
 <view class="title">邀 请 函</view>
 <view class="start">尊敬的 {{name}} {{gender}}:</view>
 <view class="body1">您好！</view>
-<view class="body2">诚挚邀请您参加 2022 Enigma 幻境舞会 ！</view>
-<view class="time">时间: 2022.2.26 周六16:30-21:30</view>
-<view class="place1">地点: 静安区南京西路1333号</view>
-<view class="place2">恒悦尚品一楼一号宴会厅</view>
+<view class="body2">诚挚邀请您参加 2023 Blossom 逐青舞会 ！</view>
+<view class="time">时间: 2023.3.25 周六 17:30-21:30</view>
+<view class="place1">地点: 白金汉爵大酒店 沪闵路1577号</view>
+<view class="place2">188号 宴会厅</view>
 <view class="end">上海交通大学 密西根学院</view>
-<view class="order">{{order}}</view>
-<image src="{{imageUrl}}" mode='widthFix'class="image"></image>

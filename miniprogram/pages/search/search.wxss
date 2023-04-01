@@ -10,6 +10,14 @@ page {
   flex: 1;
   height: 100%;
 }
+.first_tab .dancers .dancerImage .hasPartner {
+  margin-top: 5px;
+  font-size: 24rpx;
+}
+.first_tab .dancers .dancerImage .noPartner {
+  margin-top: 5px;
+  font-size: 24rpx;
+}
 .search_row button {
   width: 110rpx !important;
   height: 100%;
@@ -47,21 +55,32 @@ page {
 .first_tab .dancers {
   display: flex;
   border-bottom: 5rpx solid #ccc;
+  margin:3rpx;
 }
 .first_tab .dancers .dancerImage {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .first_tab .dancers .dancerImage image {
   width: 70%;
 }
 .first_tab .dancers .dancerInfo {
   flex: 2;
+  
 }
 .first_tab .dancers .dancerInfo .dancerName {
   font-size: 27rpx;
+}
+.first_tab .dancers .dancerImage .hasPartner {
+  margin-top: 5px;
+  font-size: 24rpx;
+}
+.first_tab .dancers .dancerImage .noPartner {
+  margin-top: 5px;
+  font-size: 24rpx;
 }
 .first_tab .dancers .dancerInfo .dancerGender {
   font-size: 27rpx;

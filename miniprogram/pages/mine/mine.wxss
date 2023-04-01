@@ -68,7 +68,7 @@
   margin:30rpx;
 }
 .message{
-  border: 5rpx solid dodgerblue;
+  border: 5rpx solid #FFC0CB;
   border-radius: 15rpx;
   margin: 30rpx;
   padding:8rpx;
@@ -78,7 +78,7 @@
   font-size: 27rpx;
 }
 .message2{
-  border: 5rpx solid dodgerblue;
+  border: 5rpx solid #6becb7;
   border-radius: 15rpx;
   margin: 30rpx;
   padding:8rpx;
@@ -89,7 +89,7 @@
   color:gray;
 }
 .button{
-  background-color:dodgerblue !important;
+  background-color:#6becb7 !important;
   color:snow !important;
   border-radius: 10rpx;
   border-style:hidden !important;

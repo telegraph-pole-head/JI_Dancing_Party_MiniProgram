@@ -6,11 +6,31 @@
 <view wx:if="{{hasSearched==true}}">
 <view wx:if="{{dataobj.length!=0}}">
 <view wx:for="{{dataobj}}" wx:key="_openid">
-  <!-- <view class="first_tab" wx:if="{{item.hasPartner==false}}"> -->
-  <view class="first_tab">
+  <view class="first_tab" wx:if="{{item.hasPartner==false}}">
+  <!-- <view class="first_tab"> -->
      <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
         <view class="dancerImage">
           <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+          <view class="noPartner">暂无舞伴</view>
+
+        </view>
+        <view class="dancerInfo">
+          <text decode="{{true}}">&nbsp;</text>
+          <view class="dancerName">姓名：{{item.name}}</view>
+          <view class="dancerGender">性别：{{item.gender}}</view>
+          <view class="dancerSchool">学校学院：{{item.school}}</view>
+          <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+          <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+          <text decode="{{true}}">&nbsp;</text>
+        </view>
+     </navigator>
+  </view>
+  <view class="first_tab" wx:if="{{item.hasPartner==true}}">
+  <!-- <view class="first_tab"> -->
+     <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+        <view class="dancerImage">
+          <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+          <view class="hasPartner">已有舞伴</view>
         </view>
         <view class="dancerInfo">
           <text decode="{{true}}">&nbsp;</text>

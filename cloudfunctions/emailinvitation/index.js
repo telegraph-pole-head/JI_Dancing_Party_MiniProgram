@@ -18,6 +18,8 @@ exports.main = async (event, context) => {
     const promise = db.collection(listname).skip(i * MAX_LIMIT).limit(MAX_LIMIT).where({receiverid:event.receiverid}).get()
     tasks.push(promise)
   }
+  if(tasks.length!=0)
+  {
   // 等待所有
   return (await Promise.all(tasks)).reduce((acc, cur) => {
     return {
@@ -25,5 +27,12 @@ exports.main = async (event, context) => {
       errMsg: acc.errMsg,
       openid:wxContext.OPENID
     }
-  })
+  })}
+  else{
+    return {
+      data: [],
+      errMsg: "",
+      openid:wxContext.OPENID
+    }
+  }
 }

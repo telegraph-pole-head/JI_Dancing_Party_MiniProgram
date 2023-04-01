@@ -13,6 +13,9 @@ button{
   margin:  auto 10px;
   height: 30px;
 }
+.posterimage{
+width:100%
+}
 .btn{
   width: 100%;
   background: none;
@@ -26,4 +29,48 @@ button{
   justify-content: center; 
   color:gray;
   height:800rpx;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 100px !important;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.avatar {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.container {
+  display: flex;
+}
+.row{
+   border-top: 1px solid #ccc;
+   border-bottom: 1px solid #ccc;
+   display: flex;
+   align-items: center;
+   height: 80rpx;
+   padding-left: 20rpx;
+}
+.text1{
+    flex: 2;
+}
+.weui-input{
+    flex: 6;
+}
+.avatar_submit{
+  color:grey;
+  font-size:20rpx
+}
+.greeting{
+  color:silver;
+}
+.button{
+  background-color:#6becb7 !important;
+  color:snow !important;
+  border-radius: 10rpx;
+  border-style:hidden !important;
 }

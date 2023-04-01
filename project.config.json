@@ -40,9 +40,19 @@
     "useCompilerPlugins": false
   },
   "appid": "wxca4ec22534f431ce",
-  "projectname": "Enigma 幻境舞会",
+  "projectname": "Blossom%20%E9%80%90%E9%9D%92%E8%88%9E%E4%BC%9A",
   "libVersion": "2.14.1",
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "compileType": "miniprogram",
+  "srcMiniprogramRoot": "miniprogram/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
   "condition": {
     "search": {
       "list": []

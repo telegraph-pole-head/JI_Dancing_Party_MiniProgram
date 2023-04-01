@@ -2,9 +2,32 @@
 .all{
   display:flex;
   flex-direction:column;
+  background-color: rgb(245, 245, 245);
 }
 .top{
   display:flex;
+}
+.avatar-wrapper {
+  padding: 0;
+  width: 100px !important;
+  border-radius: 8px;
+  margin-top: 40px;
+  background-color: rgb(245, 245, 245);
+}
+.avatar_submit{
+  color:grey;
+  font-size:20rpx
+}
+.avatar_submit2{
+  color:silver;
+  font-size:15rpx;
+  align-items: center;
+}
+.avatar {
+  border-radius: 50%;
+  display: block;
+  width: 100px;
+  height: 100px;
 }
  .topshowimage{
   flex: 2;
@@ -19,6 +42,12 @@
   width: 150rpx;
   height: 150rpx;
   border-radius: 50%;
+}
+.button{
+  background-color:#6becb7 !important;
+  color:snow !important;
+  border-radius: 10rpx;
+  border-style:hidden !important;
 }
 .user_info_nickname{
   font-size: 32rpx;
@@ -58,7 +87,7 @@
   left:30rpx;
 }
 .textbox{
-  border: 5rpx solid dodgerblue;
+  border: 5rpx solid #6becb7;
   border-radius: 15rpx;
   margin: 15rpx;
   padding:8rpx;

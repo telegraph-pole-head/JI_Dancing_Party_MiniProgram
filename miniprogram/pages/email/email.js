@@ -26,7 +26,6 @@ Page({
       number:0,
     });
     console.log(res.result.openId);
-  
         wx.cloud.callFunction({
           name: 'emailinvitation',
           data:{

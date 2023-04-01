@@ -4,7 +4,7 @@ Page({
     name:'',
     gender:'',
     order:'',
-    imageUrl:"https://636c-cloud1-7g4co5hf9c3c5ba7-1309004817.tcb.qcloud.la/invitation.png?sign=a48fb6913d662d014b9ec08444e23699&t=1640690174"
+    imageUrl:"https://i.postimg.cc/28NcRRhW/invitation.jpg"
   },
 
   /**

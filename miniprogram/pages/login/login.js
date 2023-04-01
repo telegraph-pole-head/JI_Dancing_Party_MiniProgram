@@ -1,31 +1,74 @@
 // 登陆页面
 const db=wx.cloud.database();
 const _=db.command;
+const defaultAvatarUrl = 'https://i.postimg.cc/pdbCXg0d/20230219181927.jpg'
 Page({
   data: {
     authority:false, // 用户是否微信授权头像和昵称，不授权不能来玩！
     // 海报的图片
-    imageUrl:"https://6b75-kulu-9g08tpms523e5824-1309004817.tcb.qcloud.la/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220506232013.jpg?sign=68c495095c73db53549ac4763d561092&t=1651850428",
+    poster:"https://626c-blossom-4gzwd51i82e0ac00-1309004817.tcb.qcloud.la/poster.jpg?sign=24aacd6bb37f61e56788aa3b32649825&t=1678594615",
+    imageUrl:"https://i.postimg.cc/pdbCXg0d/20230219181927.jpg",
     userInfo:{}, // 用户填写的信息
     name:"", // 用户填入的姓名
     openid:'', // 用户的openid
-    canIUseGetUserProfile: false, // 用户是否授权头像
-    hasUserInfo: false, // 用户授权信息
     haslog:false, // 用户是否已经登陆过了
-    done:false, // 页面和数据库是否加载完毕
+    done:false, // 页面和数据库是否加载完毕,
+    submit_status:false,
+    avatarUrl: defaultAvatarUrl,
+    theme: wx.getSystemInfoSync().theme,
+    user_avatar:"",
+    avatar_submit:false,
+    debug:"initial state",
+    count:0,
+    onstack:false
   },
 btnSub(e){
-  //第一次登陆时，将用户填写的信息和User数据库比对，判断是否能登陆
-  var authority=this.data.authority;
-  console.log(authority);
-  if(authority==true){
-  var userinfo=this.data.userInfo;
+  if(this.data.count!=0)
+  {
+    return;
+  }
+  if(this.data.onstack==true)
+  {
+    return;
+  }
+  else 
+  {
+    this.setData({
+      onstack:true
+    })
+  }
+  if(this.data.avatar_submit==false)
+  {
+    wx.showToast({
+    title:"头像捏",
+    icon:'error',
+    mask:true
+    })
+    this.setData({
+      onstack:false
+    })
+    return;
+  }
+  var nickname=e.detail.value.nickname;
+  if(nickname=="")
+  {
+    wx.showToast({
+      title:"昵称捏",
+      icon:'error',
+      mask:true
+      })
+      this.setData({
+        onstack:false
+      })
+    return;
+  }
+  //第一次登陆时，将用户填写的信息和User数据库比对，判断是否能登陆\
   var password=e.detail.value.password;
   var userid=e.detail.value.userid;
   console.log(userid);
   console.log(password);
-  
-  db.collection("User").where({
+ 
+  db.collection("User") .where({
     name:userid
     ,phone:password
   }).get({
@@ -35,14 +78,23 @@ btnSub(e){
       { var person=ress.data[0];
         console.log(person);
         db.collection("ActiveUser").where({
-        name:userid,phone:password
-      }).get({
+          name:userid,phone:password
+        }).get({
     success:res=>{
       console.log(res);
     if(res.data.length==0)
     {
-      console.log(person);
-      // 用户第一次登陆，在ActiveUser数据库中添加个人的数据
+    wx.cloud.uploadFile({
+      cloudPath:this.data.openid+".jpg",
+      filePath: this.data.avatarUrl, // 文件路径
+      success: res => {
+        this.setData({
+          user_avatar:res.fileID,
+          avatarUrl:res.fileID,
+          count:1
+        })
+
+         // 用户第一次登陆，在ActiveUser数据库中添加个人的数据
       db.collection('ActiveUser').add({
         data: {
           gender:person.gender,
@@ -60,29 +112,40 @@ btnSub(e){
           message:'',
           partner:"Ta还没有呢",
           mypartner:'我还没有呢',
-          nickname:userinfo.nickName,
-          image:userinfo.avatarUrl
+          nickname:nickname,
+          image: this.data.user_avatar,
         },
         success:ress2=>{
           console.log(1);
-          if(authority==true)
-          {
           wx.showToast({
             title:"登录成功",
             icon:'success',
             mask:true
           })
+          this.setData({
+            onstack:false
+          })
           wx.switchTab({
         url: '../home/home',
         })}
         }
-      })
+      )
+      },
+     
+      fail: err => {
+        // handle error
+      }
+    })
+     
   }
     else{
       wx.showToast({
         title:"账户已注册过",
         icon:'error',
         mask:true
+      })
+      this.setData({
+        onstack:false
       })
     }
   }})}
@@ -92,16 +155,12 @@ btnSub(e){
       icon:'error',
       mask:true
     })
-  }
-}})
-}
-    else{
-      wx.showToast({
-        title:"请先授权",
-        icon:'error',
-        mask:true
+    this.setData({
+      onstack:false
     })
-    }
+  }
+
+}})
   }
 ,
 getOpenid() {  let that = this;
@@ -128,35 +187,24 @@ getOpenid() {  let that = this;
   });
   }
 ,
+onChooseAvatar(e) {
+  const { avatarUrl } = e.detail 
+    this.setData({
+      avatar_submit:true,
+      user_avatar:avatarUrl,
+      avatarUrl:avatarUrl
+    })
+},
 
-getUserProfile(e) {
-  wx.getUserProfile({
-    desc: '用于完善会员资料', 
-    success: (res) => {
-      this.setData({
-        userInfo: res.userInfo,
-        hasUserInfo:true,
-        authority:true,
-      })
-    }
-  })
-},
-getUserInfo(e) {
-  this.setData({
-    userInfo: e.detail.userInfo,
-    hasUserInfo: true,
-    authority:true,
-  })
-},
   /**
    * 生命周期函数--监听页面加载
-   */
-onLoad: function (options) {
-    if (wx.getUserProfile) {
+   */ 
+onLoad() {
+    wx.onThemeChange((result) => {
       this.setData({
-        canIUseGetUserProfile: true
+        theme: result.theme
       })
-    }
+    })
     this.getOpenid();
   },
 })
