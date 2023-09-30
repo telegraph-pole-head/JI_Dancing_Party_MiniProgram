@@ -39,6 +39,8 @@
 - 复制这个文件夹中的所有文件，粘贴到您的小程序文件夹中
 - 把 mycodes/pages/login/login.js 的 data 对象中 imageurl 冒号后面的那个链接修改成您之前记录的海报照片的 url 地址
 - 把报名表格（仅包含性别、姓名、电话号码、学校学院）通过https://tableconvert.com 网站转成.json 文件，然后导入云开发数据库的 User 数据库中。需要的数据库索引是：gender、name、phone、school。（全部是字符串格式即可）。
+- 在微信开发者平台右键点击`cloudfunctions`进行云环境部署
+- 配置数据库 environment id
 - 上传，经微信平台工作人员审核通过后发表即可
 - 可以不断更新版本，发布新的版本
 
